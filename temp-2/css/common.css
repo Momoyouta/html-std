@@ -1,0 +1,282 @@
+.wrapper {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+.shortcut {
+    height: 52px;
+    background-color: #333;
+}
+
+.shortcut .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    height: 52px;
+}
+
+.shortcut .wrapper ul{
+    display: flex;
+    line-height: 52px;
+}
+
+.shortcut li a{
+    padding: 0 15px;
+    border-right: 1px solid #999999 ;
+    font-size: 14px;
+    color: #fff;
+}
+
+.shortcut li .login {
+    color: #5EB69C;
+}
+
+.shortcut li:last-child a{
+    border: none;
+}
+
+.shortcut li .iconfont {
+    margin-right: 4px;
+    margin-top: 3px;
+}
+
+.hearder {
+    display: flex;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+.hearder .logo {
+    width: 200px;
+    height: 88px;
+    margin-right: 40px;
+}
+
+.logo a {
+    display: block;
+    width: 200px;
+    height: 88px;
+    background-image: url(../img/logo.png);
+    font-size: 0;
+}
+
+.nav ul {
+    display: flex;
+    line-height: 88px;
+    margin-right: 27px;
+}
+
+.nav li {
+    padding-right: 48px;
+}
+
+.nav li a{
+    padding-bottom: 10px;
+}
+
+.nav .active {
+    color: #5EB69C;
+    border-bottom: 2px solid #5EB69C;
+}
+
+.search {
+    display: flex;
+    width: 170px;
+    height: 34px;
+    margin-top: 33px;
+    margin-right: 45px;
+    border-bottom: 2px solid #F4F4F4;
+}
+
+.search .iconfont {
+    font-size: 18px;
+    color: #ccc;
+    margin-right: 8px;
+    
+}
+
+.search input {
+    width: 0;
+    margin-bottom: 3px;
+    flex: 1;
+    color: #ccc;
+}
+
+.cart {
+    position: relative;
+    margin-top: 32px;
+}
+
+.cart .iconfont {
+    font-size: 24px;
+}
+
+.cart i {
+    position: absolute;
+    top: -2px;
+    left: 10px;
+    padding: 0 6px;
+    height: 15px;
+    background-color: #E26237;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 15px;
+    color: #fff;
+}
+
+.footer {
+    height: 580px;
+    margin-bottom: 0;
+    background-color: #F5F5F5;
+}
+
+.footer .service {
+    height: 178px;
+    padding: 60px 0;
+    border-bottom: 1px solid #E8E8E8 ;
+    
+}
+
+.footer .service ul{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.footer .service li {
+    display: flex;
+    width: 190px;
+    height: 58px;
+    line-height: 58px;
+    padding-left: 78px;
+    background: url(../img/sprite.png) no-repeat;
+    font-size: 28px;
+}
+
+.footer .service li:nth-child(2) {
+    background-position: 0 -58px;
+}
+
+.footer .service li:nth-child(3) {
+    background-position: 0 -116px;
+}
+
+.footer .service li:nth-child(4) {
+    background-position: 0 -174px;
+}
+
+
+.footer .help {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+    padding-top: 60px;
+}
+
+.footer .help .left {
+    display: flex;
+}
+
+.footer .help .left dl{
+    margin-right: 84px;
+}
+
+.footer .help .left dl:last-child {
+    margin-right: 0;
+}
+
+.footer .help .left dt {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.footer .help .left dd {
+    margin-bottom: 10px;
+    color: #969696;
+}
+
+.footer .help .left dd a {
+    color: #969696;
+}
+
+.footer .help .right {
+    width: 295px;
+}
+
+.footer .help .right ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .help .right .pic {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+.footer .help .right p {
+    color: #969696;
+    text-align: center;
+}
+
+.footer .copyright {
+    text-align: center;
+    color: #A1A1A1 ;
+}
+.footer .copyright .list {
+    display: flex;
+    justify-content: center;
+}
+.footer .copyright .list ul {
+    display: flex;
+}
+
+.footer .copyright a {
+    padding: 0 10px;
+    border-right: 1px #A1A1A1 solid;
+    color: #A1A1A1 ;
+}
+
+.footer .copyright li:last-child a{
+    border: none;
+}
+
+.title {
+    display: flex;
+    height: 42px;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.title .left {
+    display: flex;
+}
+
+.title .left h3 {
+    font-size: 30px;
+    margin-right: 35px;
+}
+
+.title .left p {
+    align-self: flex-end;
+    color: #A1A1A1 ;
+}
+
+.title .right .more {
+    line-height: 42px;
+    color: #A1A1A1 ;
+}
+
+.bd {
+    height: 404px;
+}
+
+.bd ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bd li {
+    width: 304px;
+    height: 404px;
+}
+
