@@ -16,7 +16,7 @@
     <div class="shortcut">
         <div class="wrapper">
             <ul>
-                <li><a href="" class="login">请先登录</a></li>
+                <li><a href="../temp-3/login.html" class="login">请先登录</a></li>
                 <li><a href="" >免费注册</a></li>
                 <li><a href="" >我的订单</a></li>
                 <li><a href="" >会员中心</a></li>
@@ -571,5 +571,28 @@
             </div>
         </div>
     </div>
+    <!-- 来自temp-3 -->
+    <script>
+        const li1=document.querySelector('.shortcut li:first-child');
+        const li2=li1.nextElementSibling;
+        
+        function render(){
+            const username=localStorage.getItem('xtx-username');
+            if(username){
+                li1.innerHTML=`<a href="javascript::" class="login">${username}</a>`
+                li2.innerHTML='<a href="" >退出登录</a>'
+            }
+            else{
+                li1.innerHTML='<a href="../temp-3/login.html" class="login">请先登录</a>'
+                li2.innerHTML='<a href="../temp-3/register.html" >免费注册</a>'
+            }
+        }
+        render();
+
+        li2.addEventListener('click',function(e){
+            localStorage.removeItem('xtx-username');
+            render();
+        });
+    </script>
 </body>
 </html>

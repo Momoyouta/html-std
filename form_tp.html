@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学生信息收集</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    form {
+      text-align: center;
+      font-size: 20px;
+    }
+
+    form input,select {
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 1px #666 solid;
+      height: 27px;
+      font-size: 20px;
+      color: #5f5d5d;
+    }
+
+    form .uname {
+      width: 100px;
+    }
+
+    form .age {
+      width: 50px;
+    }
+
+    form .earn {
+      width: 100px;
+    }
+
+    form .submit {
+      display: inline-block;
+      padding: 0 10px;
+      vertical-align: bottom;
+    }
+
+    table {
+      margin: 0 auto;
+      text-align: center;
+      border-collapse: collapse;
+    }
+
+    td,th{
+      padding: 5px 20px;
+      border: 1px rgb(157, 157, 220) solid;
+    }
+
+    th {
+      font-weight: 400;
+      background-color: rgb(224, 224, 251);
+    }
+
+    .del {
+      color: red;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>新增学员</h1>
+  <form action="">
+    <label for="">姓名：</label>
+    <input type="text" class="uname">
+    <label for="">年龄：</label>
+    <input type="text" class="age">
+    <label for="">性别：</label>
+    <select class="sex">
+      <option value="男">男</option>
+      <option value="男">女</option>
+    </select>
+    <label for="">薪资：</label>
+    <input type="text" class="earn">
+    <label for="">就业城市：</label>
+    <select class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="深圳">深圳</option>
+      <option value="杭州">杭州</option>
+    </select>
+    <input type="submit" value="录入" class="submit">
+  </form>
+  <h1>就业榜</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <!-- <td>1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>
+          <a href="" class="del">删除</a>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    const city=document.querySelector('.city');
+    const age=document.querySelector('.age');
+    const uname=document.querySelector('.uname');
+    const sex=document.querySelector('.sex');
+    const earn=document.querySelector('.earn');
+    const submit=document.querySelector('form');
+    const del=document.querySelector('del');
+    let tb=document.querySelector('tbody');
+    let arr=[];
+    let id=1;
+    submit.addEventListener('submit',function(e){
+      e.preventDefault();
+      const list=document.querySelectorAll('form input');
+      let flag=0;
+      for(let p of list){
+        if(p.value==''){
+          flag=1;
+        }
+      }
+      if(flag){alert('数据不能为空');return;}
+      const obj= {
+        stdId: id++,
+        city: city.value,
+        age: age.value,
+        uname: uname.value,
+        sex: sex.value,
+        earn: earn.value
+      }
+      this.reset();
+      arr.push(obj);
+      render();
+      console.log(arr);
+    });
+
+    tb.addEventListener('click',function(e){
+      if(e.target.tagName=='A'){
+        console.log(e.target.dataset.index);
+        arr.splice(e.target.dataset.index,1);
+        render();
+      }
+    });
+
+    function render(){
+      tb.innerHTML='';
+      for(let i=0;i<arr.length;i++){
+        let tr=document.createElement('tr');
+        tr.innerHTML= `
+          <td>${arr[i].stdId}</td>
+          <td>${arr[i].uname}</td>
+          <td>${arr[i].age}</td>
+          <td>${arr[i].sex}</td>
+          <td>${arr[i].earn}</td>
+          <td>${arr[i].city}</td>
+          <td>
+            <a href="javascript:" class="del" data-index=${i}>删除</a>
+          </td>
+        `;
+        
+        tb.append(tr);
+      }
+    }
+
+  </script>
+</body>
+</html>

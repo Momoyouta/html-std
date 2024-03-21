@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test</title>
     <style>
         u {
             color: red;
@@ -11,20 +11,18 @@
     </style>
 </head>
 <body>
-    <h1><strong>hello world</strong></h1>
-    <h2><hr><b>123123</b>123<br>123</h2>
-    <u>qwe</u><br>
-    <i>asd</i><br>
-    <del>sad</del><br>
-    <lable for="txt">用户名:</lable><input type="text" id="txt">
-    <br>
-    <select>
-        <option>
-            xxx
-        </option>
-        <option>
-            xxx2
-        </option>
-    </select>
+    <ul class="nav">
+        <li>我的手艺</li>
+        <li>我的shouye</li>
+        <li>我的手艺</li>
+    </ul>
+    <script>
+        let list=document.querySelectorAll('ul li');
+        console.log(list)
+        console.log(list[0].innerText)
+        for(let p of list){
+            p.innerText='1';
+        }
+    </script>
 </body>
 </html>

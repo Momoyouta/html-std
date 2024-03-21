@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录页面</title>
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+  <div class="header">
+    <h1>1</h1>
+    <a href="" >进入网站首页</a>
+  </div>
+  <div class="login-main">
+    <div class="wrapper">
+      <form action="">
+        <div class="box">
+          <div class="nav">
+            <a href="javascript::" data-id="0" class="login">账户登录</a>
+            <span>|</span>
+            <a href="javascript::" data-id="1" class="code">二维码登录</a>
+          </div>
+          <div class="nav-line"></div>
+          <div class="pane-img">
+            <img src="./img/code.png" alt="">
+          </div>
+          <div class="pane">
+            <div class="link"><a href="">手机验证码登录</a></div>
+            <div class="input">
+              <span></span>
+              <input type="text" placeholder="请输入用户名称/手机号码" class="id">
+            </div>
+            <div class="input">
+              <span></span>
+              <input type="password" placeholder="请输入密码" class="pwd">
+            </div>
+            <div class="agree">
+              <input type="checkbox" name="" id="">
+              我已同意
+              <a href="javascript::">《服务条款》</a>
+              和
+              <a href="javascript::">《服务条款》</a>
+            </div>
+            <div class="botton">
+              <button type="submit" class="dl">登 录</button>
+              <a href="javascript::" class="forgot">忘记密码</a>
+              <a href="./register.html" class="register">免费注册</a>
+            </div>
+          </div>   
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="wrapper">
+      <ul>
+        <li><a href="javascript::">关于我们</a></li>
+        <li><a href="javascript::">帮助中心</a></li>
+        <li><a href="javascript::">售后服务</a></li>
+        <li><a href="javascript::">配送与验收</a></li>
+        <li><a href="javascript::">商务合作</a></li>
+        <li><a href="javascript::">搜索推荐</a></li>
+        <li><a href="javascript::">友情链接</a></li>
+    </ul>
+    <p>CopyRight © 小兔鲜儿</p>
+    </div>
+  </div>
+  <script>
+    const tab_nav=document.querySelector('.nav');
+    const tab_navbox=document.querySelector('.nav-line');
+    const code=document.querySelector('.pane-img');
+    const pane=document.querySelector('.pane');
+    const count=document.querySelector('.id');
+    const pwd=document.querySelector('.pwd');
+    const agree=document.querySelector('.agree input');
+    const login=document.querySelector('.dl');
+
+    //登录
+    login.addEventListener('click',function(e){
+      e.preventDefault();
+      const check=/^[0-9a-zA-z-_]{4,16}$/;
+      if(check.test(pwd.value)&&check.test(count.value)&&agree.checked){
+        console.log('ok');
+        localStorage.setItem('xtx-username',count.value);
+        location.href='../temp-2/index.html'
+      }else{
+        if(!check.test(pwd.value)||!check.test(count.value)){
+          alert('用户名或密码不能为空');
+        }else{
+          alert('请阅读条款');
+        }
+      }
+    });
+
+    //tab_nav
+    tab_nav.addEventListener('click',function(e){
+      if(e.target.tagName=='A'){
+        let a=e.target;
+        const width=a.clientWidth;
+        const x=a.offsetLeft;
+        tab_navbox.style.transform=`translateX(${x-40}px)`;
+        tab_navbox.style.width=`${width}px`;
+        if(e.target.dataset.id=='1'){
+          code.style.opacity='1';
+          code.style.top='25%';
+          pane.style.opacity='0';
+        }else{
+          code.style.opacity='0';
+          code.style.top='125%';
+          pane.style.opacity='1';
+        }
+      }
+    });
+    
+
+  </script>
+</body>
+</html>
