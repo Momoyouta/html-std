@@ -1,0 +1,72 @@
+.register {
+  height: 900px;
+  background-color: #e3dddd;
+  padding-top: 50px;
+}
+
+.register .wrapper {
+  width: 1240px;
+  height: 800px;
+  background-color: #fff;
+}
+
+.register h3 {
+  height: 180px;
+  padding-left: 50px;
+  line-height: 180px;
+  font-size: 26px;
+  color: #999;
+}
+
+.register form {
+  padding-left: 460px;
+}
+
+.register .input-item {
+  position: relative;
+  height: 74px;
+  padding-bottom: 24px;
+  color: #dacfcf;
+  font-size: 14px;
+}
+
+.register .input-item input {
+  width: 300px;
+  height: 50px;
+  padding-left: 40px;
+  border: 1px #dacfcf solid;
+}
+
+.register .input-item .code {
+  position: absolute;
+  top: 20%;
+  right: 495px;
+  color: #a6e7bb;
+}
+
+.register .agree {
+  padding-left: 50px;
+  color: #3d3d3d;
+}
+
+.register input[type=checkbox] {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+.register .agree a {
+  color: #a2c4f4;
+}
+
+.register .zc botton{
+  display: block;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #87d39f;
+  color: #fff;
+  cursor:pointer;
+  user-select: none;
+}

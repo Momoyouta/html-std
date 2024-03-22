@@ -4,8 +4,192 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>注册页面</title>
+  <link rel="stylesheet" href="../temp-2/css/common.css">
+  <link rel="stylesheet" href="../temp-2/css/base.css">
+  <link rel="stylesheet" href="../temp-2/iconfont/iconfont.css">
+  <link rel="stylesheet" href="./css/register.css">
 </head>
 <body>
-  1111
+  <div class="shortcut">
+    <div class="wrapper">
+        <ul>
+            <li><a href="../temp-3/login.html" class="login">请先登录</a></li>
+            <li><a href="" >免费注册</a></li>
+            <li><a href="" >我的订单</a></li>
+            <li><a href="" >会员中心</a></li>
+            <li><a href="" >帮助中心</a></li>
+            <li><a href="" >在线客服</a></li>
+            <li><a href="" ><span class="iconfont icon-mobile-phone"></span>手机版</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="hearder wrapper">
+      <div class="logo">
+          <h1><a href="">小兔先</a></h1>
+      </div>
+      <div class="nav">
+          <ul>
+              <li><a href="">首页</a></li>
+              <li><a href="">生鲜</a></li>
+              <li><a href="">美食</a></li>
+              <li><a href="">餐厨</a></li>
+              <li><a href="">电器</a></li>
+              <li><a href="">居家</a></li>
+              <li><a href="">洗护</a></li>
+              <li><a href="">运营</a></li>
+              <li><a href="">服装</a></li>
+          </ul>
+      </div>
+      <div class="search">
+          <a href=""><span class="iconfont icon-search"></span></a>
+          <input type="text" placeholder="搜一搜">
+      </div>
+      <div class="cart">
+          <a href=""><span class="iconfont icon-cart-full"></span></a>
+          <i>6</i>
+      </div>
+  </div>
+  <div class="register">
+    <div class="wrapper">
+      <h3>新用户注册</h3>
+      <form action="">
+        <div class="input-item">
+          <input type="text" class="usernmae" placeholder="设置用户名称">
+        </div>
+        <div class="input-item">
+          <input type="text" class="phone" placeholder="输入手机号码">
+        </div>
+        <div class="input-item">
+          <input type="text" class="checkcode" placeholder="短信验证码">
+          <a href="javascrpit::" class="code">发送验证码</a>
+        </div>
+        <div class="input-item">
+          <input type="text" class="pwd" placeholder="设置6至20位字母、数字和符号组合">
+        </div>
+        <div class="input-item">
+          <input type="text" class="pwda" placeholder="再次输入密码">
+        </div>
+        <div class="input-item agree">
+          <input type="checkbox">
+          已阅读并同意
+          <a href="javascrpt::">《用户协议》</a>
+        </div>
+        <div class="zc">
+          <botton type="submit">注册</botton>
+          
+        </div>
+      </form>
+      
+    </div>
+  </div>
+  <div class="footer">
+      <div class="wrapper">
+          <div class="service">
+              <ul>
+                  <li>价格亲民</li>
+                  <li>物流快捷</li>
+                  <li>品质新鲜</li>
+                  <li>售后无忧</li>
+              </ul>
+          </div>
+          <div class="help">
+              <div class="left">
+                  <dl>
+                      <dt>购物指南</dt>
+                      <dd><a href="">购物流程</a></dd>
+                      <dd><a href="">支付方式</a></dd>
+                      <dd><a href="">售后规则</a></dd>
+                  </dl>
+                  <dl>
+                      <dt>配送方式</dt>
+                      <dd><a href="">配送运费</a></dd>
+                      <dd><a href="">配送时间</a></dd>
+                      <dd><a href="">配送范围</a></dd>
+                  </dl>
+                  <dl>
+                      <dt>关于我们</dt>
+                      <dd><a href="">平台规则</a></dd>
+                      <dd><a href="">联系我们</a></dd>
+                      <dd><a href="">问题反馈</a></dd>
+                  </dl>
+                  <dl>
+                      <dt>售后服务</dt>
+                      <dd><a href="">售后政策</a></dd>
+                      <dd><a href="">退款说明</a></dd>
+                      <dd><a href="">取消订单</a></dd>
+                  </dl>
+                  <dl>
+                      <dt>服务热线</dt>
+                      <dd><a href="">在线客服</a><span class="iconfont icon-customer-service"></span></dd>
+                      <dd>客服电话 400-0000-000</dd>
+                      <dd>工作时间 周一至周日 8:00-18:00</dd>
+                  </dl>
+              </div>
+              <div class="right">
+                  <ul>
+                      <li>
+                          <div class="pic"><img src="./img/wechat.png" alt=""></div>
+                          <p>微信公众号</p>
+                      </li>
+                      <li>
+                          <div class="pic"><img src="./img/app.png" alt=""></div>
+                          <p>APP下载二维码</p>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="copyright">
+              <div class="list">
+                  <ul>
+                      <li><a href="">关于我们</a></li>
+                      <li><a href="">帮助中心</a></li>
+                      <li><a href="">售后服务</a></li>
+                      <li><a href="">配送与验收</a></li>
+                      <li><a href="">商务合作</a></li>
+                      <li><a href="">搜索推荐</a></li>
+                      <li><a href="">友情链接</a></li>
+                  </ul>
+              </div>
+              <p>CopyRight © 小兔鲜</p>
+          </div>
+      </div>
+  </div>
+  <script>
+    let codeinterval=null;
+    let time=1;
+    const vercode=document.querySelector('.code');
+    const pwd=document.querySelector('.pwd');
+
+    const pwdCheck=/^[0-9a-zA-Z-_]{6,20}$/;
+
+    pwd.addEventListener('change',function(e){
+      if(!pwdCheck.test(pwd.value)){
+        alert('请按要求输入密码');
+        pwd.value='';
+      }
+    });
+
+
+    /* 发送验证码 */
+    vercode.addEventListener('click',function(e){
+      if(time==1){
+        console.log('发送验证码');
+        time=5;
+        vercode.innerHTML=`${time}s后重新获取`;
+        codeinterval=setInterval(function(){
+          if(time==1){
+            vercode.innerHTML=`重新获取`;
+            clearInterval(codeinterval);
+          }
+          else{
+            vercode.innerHTML=`${--time}s后重新获取`;
+          }
+          
+        },1000);
+      }else{
+        alert('请耐心等待');
+      }
+    });
+  </script>
 </body>
 </html>
