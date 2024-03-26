@@ -17,12 +17,14 @@
         <li>我的手艺</li>
     </ul>
     <script>
-        let list=document.querySelectorAll('ul li');
-        console.log(list)
-        console.log(list[0].innerText)
-        for(let p of list){
-            p.innerText='1';
+        function getSum(...arr){
+        let sum=0;
+        for(let p of arr){
+            sum+=p;
         }
+        return sum;
+        }
+        console.log(getSum(2,3,4,5));
     </script>
 </body>
 </html>

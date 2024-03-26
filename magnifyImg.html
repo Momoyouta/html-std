@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片放大镜</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .content {
+      display: flex;
+      width: 1240px;
+      height: 500px;
+      margin: 50px auto;
+      padding-top: 40px;
+      background-color: #dbd4d4;
+    }
+    .main {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      background: url(./img/Carousel/4.jpg) no-repeat center;
+      background-size: cover;
+      margin-right: 10px;
+      cursor:grab;
+    }
+    .son {
+      display: none;
+      width: 400px;
+      height: 400px;
+      background: url() no-repeat center;
+      background-size: 1333px 1333px;
+    }
+    .small {
+      display: none;
+      width: 120px;
+      height: 120px;
+      position: absolute;
+      background-color: rgba(5, 4, 4, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="main">
+      <div class="small">
+
+      </div>
+    </div>
+  <div class="son"></div>
+  </div>
+  <script>
+    const main=document.querySelector('.main');
+    const son=document.querySelector('.son');
+    const s=window.getComputedStyle(main);
+    const small=document.querySelector('.small');
+    main.addEventListener('mouseenter',show);
+    main.addEventListener('mouseleave',hide);
+    son.addEventListener('mouseenter',show);
+    son.addEventListener('mouseleave',hide);
+    let timeId=null;
+    function show(){
+      son.style.display='block';
+      clearTimeout(timeId);
+      son.style.backgroundImage=s.backgroundImage;
+    }
+
+    function hide(){
+        timeId=setTimeout(function(){
+        son.style.display='none';
+      },200);
+    }
+
+    main.addEventListener('mouseenter',function(e){
+      small.style.display='block';
+    });
+
+    main.addEventListener('mouseleave',function(){
+      small.style.display='none';
+    });
+
+    main.addEventListener('mousemove',function(e){
+      const pagex=e.pageX;
+      const smx=small.clientHeight;
+      let x=e.pageY-main.getBoundingClientRect().top-smx/2;
+      let y=e.pageX-main.getBoundingClientRect().left-smx/2;
+      if(x<=0) {x=1;}
+      if(y<=0) {y=1;}
+      if(x+smx>=main.clientWidth) {x=main.clientWidth-smx;}
+      if(y+smx>=main.clientHeight) {y=main.clientHeight-smx;} 
+      console.log(x+' '+y)
+      small.style.top=x+'px';
+      small.style.left=y+'px';
+
+      son.style.backgroundPosition=`${-y*main.clientHeight/small.clientHeight}px ${-x*main.clientWidth/small.clientWidth}px`;
+
+    });
+
+  </script>
+</body>
+</html>
