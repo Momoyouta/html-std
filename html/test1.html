@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        u {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>我的手艺</li>
+        <li>我的shouye</li>
+        <li>我的手艺</li>
+    </ul>
+    <span id="clones"></span>
+    <span id="views"></span>
+    <script>
+        function getSum(...arr){
+        let sum=0;
+        for(let p of arr){
+            sum+=p;
+        }
+        return sum;
+        }
+        console.log(getSum(2,3,4,5));
+        const repoOwner = 'Momoyouta'; // Github仓库所有者的用户名
+        const repoName = 'html-std'; // Github仓库的名称
+        const accessToken = ''; // Github API访问令牌
+
+        fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/traffic/views`, {
+        headers: {
+            Authorization: `token ${accessToken}`
+        }
+        })
+        .then(response => response.json())
+        .then(data => {
+        const views = data.count;
+        // 在页面中显示views数据
+        document.getElementById('views').innerText = views;
+        });
+
+        fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/traffic/clones`, {
+        headers: {
+            Authorization: `token ${accessToken}`
+        }
+        })
+        .then(response => response.json())
+        .then(data => {
+        const clones = data.count;
+        // 在页面中显示clones数据
+        document.getElementById('clones').innerText = clones;
+        });
+
+    </script>
+    
+</body>
+</html>
