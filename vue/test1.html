@@ -4,8 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="./vue_basic/vue.js"></script>
 </head>
 <body>
-  
+  <div id="root">
+    <h2>当前n大小：<span v-text="n"></span></h2>
+    <h2>放大10倍后的n：<span v-big="n"></span></h2>
+    <button @click="n++">点击n+1</button>
+    <input type="text" v-fbind="n">
+  </div>
+  <script>
+    Vue.config.productionTip = false;
+    const vm =new Vue({
+      el:'#root',
+      data:{
+        n:1,
+      },
+      directives:{
+        big(domele,binding){
+          domele.innerText=binding.value*10;
+          
+        },
+        fbind:{
+          //元素绑定时执行
+          bind(ele,binding){
+            ele.value =binding.value
+          },
+          //指令所在元素被插入页面时执行
+          inserted(ele,binding){
+            ele.focus()
+          },
+          //指令所在模板被重新解析时执行
+          update(ele,binding){
+            ele.value =binding.value
+          }
+        }
+      }
+    })
+  </script>
 </body>
 </html>
